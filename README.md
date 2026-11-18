@@ -2,7 +2,7 @@
 
 Plataforma interactiva para aprender Matemática, desarrollada para la Unidad Académica Charagua (Formación Docente).
 
-🔗 **Aplicación en línea:** _(pega aquí el enlace de tu app cuando la publiques)_
+🔗 **Aplicación en línea:** https://algebra-master-kagaq24hn6ob746u6j4rbw.streamlit.app/
 
 ## Contenidos
 
