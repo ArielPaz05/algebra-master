@@ -37,10 +37,10 @@ TEXTO = "#F2F7EC"
 # Pega entre las comillas el enlace de YouTube o Google Drive.
 # Si lo dejas vacío (""), la tarjeta mostrará "Video próximamente".
 VIDEOS = {
-    "algebra": "https://youtu.be/qaDV-0I1lek",
-    "resolucion": "https://youtu.be/BxrJmKdPHRs",
+    "Ecuaciones Lineales ": "https://youtu.be/qaDV-0I1lek",
+    "Ecuaciones Cuadráticas": "https://youtu.be/BxrJmKdPHRs",
     "conjuntos": "https://youtu.be/KmcRMlv9_T4",
-    "visualizacion": "https://youtu.be/sSfO1CsKJ4g",
+    "Factorización": "https://youtu.be/sSfO1CsKJ4g",
 }
 
 ESTILOS = """
@@ -448,10 +448,10 @@ def pagina_inicio():
     )
 
     tarjetas = [
-        ("📘 Álgebra", "Ecuaciones, simplificación y factorización.", "algebra"),
-        ("🧮 Resolución", "Procedimientos matemáticos paso a paso.", "resolucion"),
+        ("📘 Ecuaciones Lineal", "Ecuaciones", "algebra"),
+        ("🧮 Ecuaciones Cuadráticas", "Procedimientos matemáticos paso a paso.", "resolucion"),
         ("🧩 Conjuntos", "Unión, intersección y diferencias de conjuntos.", "conjuntos"),
-        ("📊 Visualización", "Representaciones gráficas para aprender mejor.", "visualizacion"),
+        ("📊 Factorización", ", Factorización.", "visualizacion"),
     ]
     col1, col2 = st.columns(2)
     for i, (titulo, texto, clave) in enumerate(tarjetas):
