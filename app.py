@@ -33,9 +33,6 @@ LIMA = "#B5FF35"
 VERDE = "#72B82B"
 TEXTO = "#F2F7EC"
 
-# Enlaces a videos educativos de la pantalla de inicio.
-# Pega entre las comillas el enlace de YouTube o Google Drive.
-# Si lo dejas vacío (""), la tarjeta mostrará "Video próximamente".
 VIDEOS = {
     "Ecuaciones Lineales ": "https://youtu.be/qaDV-0I1lek",
     "Ecuaciones Cuadráticas": "https://youtu.be/BxrJmKdPHRs",
@@ -149,8 +146,7 @@ def aplicar_estilos():
 # 2. VALIDACION Y LECTURA SEGURA DE TEXTO
 # ==========================================
 
-# Solo se permiten dígitos, la letra x y símbolos matemáticos básicos.
-# Esto impide escribir código (no hay letras, guiones bajos ni comillas).
+
 PATRON_VALIDO = re.compile(r"^[0-9x\s+\-*/^().=]+$")
 MAX_CARACTERES = 100
 MAX_EXPONENTE = 10
