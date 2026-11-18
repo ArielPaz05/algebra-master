@@ -18,7 +18,7 @@ from sympy.parsing.sympy_parser import (
 # ==========================================
 
 st.set_page_config(
-    page_title="ALGEBRA MASTER",
+    page_title="RESULEVE EJERCICIOS DE ALGEBRA",
     page_icon="📐",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -396,7 +396,7 @@ def metodos_factorizacion(expresion, resultado):
 def pagina_inicio():
     st.markdown('<p class="main-title">📐 ALGEBRA MASTER</p>', unsafe_allow_html=True)
     st.markdown(
-        '<p class="subtitle">Plataforma interactiva para aprender Matemática</p>',
+        '<p class="subtitle">Plataforma interactiva para aprender y resolver ejercicios Matemáticos</p>',
         unsafe_allow_html=True,
     )
     st.divider()
