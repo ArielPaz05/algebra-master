@@ -698,7 +698,9 @@ def main():
         <div class="footer-text">
         <b>ALGEBRA MASTER</b><br>
         Unidad Académica Charagua<br>
-        <b>Equipo de trabajo: Ariel - Eliana - Pamela - Mayte - Karen Mat "B"</b><br>
+        <b>Equipo de trabajo: Ariel - Eliana - Pamela - Mayte - Karen - Tatiana</b><br>
+        <b> Mat "B"</b><br>
+        <b>Docente: Victor Anibal</b><br>
         Plataforma educativa de Matemática
         </div>
         """,
