@@ -39,7 +39,7 @@ TEXTO = "#F2F7EC"
 VIDEOS = {
     "Ecuaciones Lineales ": "https://youtu.be/qaDV-0I1lek",
     "Ecuaciones Cuadráticas": "https://youtu.be/BxrJmKdPHRs",
-    "conjuntos": "https://drive.google.com/file/d/1FpYUSP0d_wPvq8Z3Br6bgk3VOy2pO4c7/view?usp=sharing",
+    "conjuntos": "https://drive.google.com/file/d/1XXNpAqUIvf7GXDmm5AbzvEZ7KxtAyP3F/view?usp=sharing",
     "Factorización": "https://youtu.be/sSfO1CsKJ4g",
 }
 
