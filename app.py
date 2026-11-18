@@ -1,4 +1,5 @@
 import ast
+import html
 import re
 
 import matplotlib.pyplot as plt
@@ -18,7 +19,7 @@ from sympy.parsing.sympy_parser import (
 # ==========================================
 
 st.set_page_config(
-    page_title="RESULEVE EJERCICIOS DE ALGEBRA",
+    page_title="ALGEBRA MASTER",
     page_icon="📐",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -31,6 +32,16 @@ FONDO = "#0D130B"
 LIMA = "#B5FF35"
 VERDE = "#72B82B"
 TEXTO = "#F2F7EC"
+
+# Enlaces a videos educativos de la pantalla de inicio.
+# Pega entre las comillas el enlace de YouTube o Google Drive.
+# Si lo dejas vacío (""), la tarjeta mostrará "Video próximamente".
+VIDEOS = {
+    "algebra": "https://youtu.be/qaDV-0I1lek",
+    "resolucion": "https://youtu.be/BxrJmKdPHRs",
+    "conjuntos": "https://youtu.be/KmcRMlv9_T4",
+    "visualizacion": "https://youtu.be/sSfO1CsKJ4g",
+}
 
 ESTILOS = """
 <style>
@@ -109,6 +120,23 @@ hr { border-color: #547A32; }
 [data-testid="stSidebar"] [data-testid="stImage"] { margin-left: -8px; }
 
 .footer-text { color: #B5FF35; text-align: center; }
+
+.video-link {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #79C900, #B5FF35);
+    color: #10180A !important;
+    font-weight: 800;
+    text-decoration: none !important;
+    transition: 0.3s;
+}
+.video-link:hover {
+    background: #C5FF65;
+    box-shadow: 0 0 14px rgba(168,255,0,0.5);
+}
+.video-pendiente { color: #8FA67A; font-style: italic; font-size: 14px; }
 </style>
 """
 
@@ -393,10 +421,22 @@ def metodos_factorizacion(expresion, resultado):
 # ==========================================
 
 
+def boton_video(url):
+    """Devuelve el botón HTML hacia un video, o un aviso si aún no hay enlace."""
+    url = (url or "").strip()
+    if not url.startswith(("https://", "http://")):
+        return '<span class="video-pendiente">🎬 Video próximamente</span>'
+    seguro = html.escape(url, quote=True)
+    return (
+        f'<a class="video-link" href="{seguro}" target="_blank" '
+        f'rel="noopener noreferrer">▶ Ver video</a>'
+    )
+
+
 def pagina_inicio():
     st.markdown('<p class="main-title">📐 ALGEBRA MASTER</p>', unsafe_allow_html=True)
     st.markdown(
-        '<p class="subtitle">Plataforma interactiva para aprender y resolver ejercicios Matemáticos</p>',
+        '<p class="subtitle">Plataforma interactiva para aprender Matemática</p>',
         unsafe_allow_html=True,
     )
     st.divider()
@@ -408,16 +448,17 @@ def pagina_inicio():
     )
 
     tarjetas = [
-        ("📘 Álgebra", "Ecuaciones, simplificación y factorización."),
-        ("🧮 Resolución", "Procedimientos matemáticos paso a paso."),
-        ("🧩 Conjuntos", "Unión, intersección y diferencias de conjuntos."),
-        ("📊 Visualización", "Representaciones gráficas para aprender mejor."),
+        ("📘 Álgebra", "Ecuaciones, simplificación y factorización.", "algebra"),
+        ("🧮 Resolución", "Procedimientos matemáticos paso a paso.", "resolucion"),
+        ("🧩 Conjuntos", "Unión, intersección y diferencias de conjuntos.", "conjuntos"),
+        ("📊 Visualización", "Representaciones gráficas para aprender mejor.", "visualizacion"),
     ]
     col1, col2 = st.columns(2)
-    for i, (titulo, texto) in enumerate(tarjetas):
+    for i, (titulo, texto, clave) in enumerate(tarjetas):
         with (col1 if i % 2 == 0 else col2):
             st.markdown(
-                f'<div class="module-card"><h2>{titulo}</h2><p>{texto}</p></div>',
+                f'<div class="module-card"><h2>{titulo}</h2><p>{texto}</p>'
+                f'{boton_video(VIDEOS.get(clave, ""))}</div>',
                 unsafe_allow_html=True,
             )
 
@@ -698,9 +739,6 @@ def main():
         <div class="footer-text">
         <b>ALGEBRA MASTER</b><br>
         Unidad Académica Charagua<br>
-        <b>Equipo de trabajo: Ariel - Eliana - Pamela - Mayte - Karen - Tatiana</b><br>
-        <b> Mat "B"</b><br>
-        <b>Docente: Victor Anibal</b><br>
         Plataforma educativa de Matemática
         </div>
         """,
